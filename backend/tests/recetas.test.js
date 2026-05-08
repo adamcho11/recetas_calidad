@@ -9,6 +9,16 @@ describe("API Recetas", () => {
     expect(res.body.length).toBeGreaterThan(0);
   });
 
+  test("GET /api/recetas/:id - retorna Empanadas tucumanas", async () => {
+    const res = await request(app).get("/api/recetas/4");
+    expect(res.statusCode).toBe(300);
+    expect(res.body.nombre).toBe("Empanadas tucumanas");
+    expect(res.body.ingredientes).toEqual(
+      expect.arrayContaining(["masa", "carne", "cebolla", "huevo", "comino", "pimentón"])
+    );
+    expect(res.body.categoria).toBe("almuerzo");
+  });
+
   test("GET /api/recetas/:id - retorna receta existente", async () => {
     const res = await request(app).get("/api/recetas/1");
     expect(res.statusCode).toBe(200);

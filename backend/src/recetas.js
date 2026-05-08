@@ -20,6 +20,13 @@ const recetas = [
     tiempo: 30,
     categoria: "desayuno",
   },
+  {
+    id: 4,
+    nombre: "Empanadas tucumanas",
+    ingredientes: ["masa", "carne", "cebolla", "huevo", "comino", "pimentón"],
+    tiempo: 80,
+    categoria: "almuerzo",
+  },
 ];
 
 module.exports = { recetas };
