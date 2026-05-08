@@ -11,7 +11,7 @@ describe("API Recetas", () => {
 
   test("GET /api/recetas/:id - retorna Empanadas tucumanas", async () => {
     const res = await request(app).get("/api/recetas/4");
-    expect(res.statusCode).toBe(300);
+    expect(res.statusCode).toBe(200);
     expect(res.body.nombre).toBe("Empanadas tucumanas");
     expect(res.body.ingredientes).toEqual(
       expect.arrayContaining(["masa", "carne", "cebolla", "huevo", "comino", "pimentón"])
